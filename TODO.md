@@ -1,0 +1,7 @@
+- vypocet ratingu per produkt a per pojistovna
+- view pro kategorii a pojistovnu
+- view pro jednotlive recenze
+ - disqus diskuze pod recenzemi
+- about text
+- mensi header img
+- vyzehlit design vypisu recenzi

@@ -45,5 +45,5 @@ class Review(models.Model):
 
 
     def __str__(self):
-        return self.author + ': ' + self.text[:20] 
+        return self.author + ' - ' + self.product + ': ' + self.text[:60] 
 
