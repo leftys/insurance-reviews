@@ -30,15 +30,15 @@ def about(request):
 def submit_review(request):
     try:
         selected_product = Product.objects.get(name = request.POST['insurance'])
-    except KeyError:
-        selected_product = Product(name = request.POST['insurance'])
+    except Product.DoesNotExist:
+        selected_product = Product(name = request.POST['insurance'], creation_time = timezone.now())
         selected_product.save()
     review = Review(
         author = request.POST['name'],
         author_ip = request.META.get('REMOTE_ADDR'),
         product = selected_product,
         text = request.POST['message'],
-        rating = 0, # TODO
+        rating = request.POST['rating'],
         creation_time = timezone.now(),
     )
     review.save()

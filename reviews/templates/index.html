@@ -8,14 +8,15 @@
 {% if reviews %}
     {% for review in reviews %}
         <div class="post-preview">
-          <a href="post.html">
+        {#<a href="post.html">#}
             <h3 class="post-title">
                     {{ review.product }}
             </h3>
-          </a>
+        {#</a>#}
           <p class="post-meta">
             Pojišťovna <a>{{ review.product.company }}</a> |
-            Kategorie <a>{{ review.product.category }}</a>
+            Kategorie <a>{{ review.product.category }}</a> 
+            <input id="stars-{{ review.id }}" type="text" class="rating" max=5 value="{{ review.rating|floatformat:"0" }}" data-size="sm" readonly="true"></input>
           </p>
           <p class="">{{ review.text }} </p>
           <p class="post-meta">Napsal {{ review.author }} dne {{ review.creation_time|date:'d.m.Y' }}</p>

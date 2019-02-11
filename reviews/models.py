@@ -24,9 +24,9 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length = 300)
-    company = models.ForeignKey(Company, on_delete = models.CASCADE)
-    category = models.ForeignKey(Category, on_delete = models.CASCADE)
-    rating = models.FloatField()
+    company = models.ForeignKey(Company, on_delete = models.CASCADE, null = True)
+    category = models.ForeignKey(Category, on_delete = models.CASCADE, null = True)
+    rating = models.FloatField(null = True)
     creation_time = models.DateTimeField()
 
 
