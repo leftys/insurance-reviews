@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Přidat recenzi{% endblock %}
+{% block title %}Přidat recenzi{% endblock %}
+
+{% block content %}
+
+    <form class="form-horizontal" method="post" action="{% url "submit_review" %}">
+     {% csrf_token %}
+     <div class="form-group ">
+      <label class="control-label col-sm-2 requiredField" for="name">
+       Jméno
+      </label>
+      <div class="col-sm-10">
+       <input class="form-control" id="name" name="name" type="text"/>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label col-sm-3" for="email">
+       Email (volitelný)
+      </label>
+      <div class="col-sm-10">
+       <input class="form-control" id="email" name="email" type="text"/>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label col-sm-2 requiredField" for="produkt">
+       Pojištění
+      </label>
+      <div class="col-sm-10">
+       <input class="form-control" id="insurance" name="insurance" type="text" list="insurance_list" placeholder="Začněte psát nebo dvojklikněte pro možnosti. Můžete přidat i novou."/>
+       <datalist id="insurance_list">
+        {% for insurance in insurances %}
+        <option>{{ insurance.name }}</option>
+        {% endfor %}
+       </datalist>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label col-sm-2 requiredField" for="message">
+       Recenze 
+      </label>
+      <div class="col-sm-10">
+       <textarea class="form-control" cols="40" id="message" name="message" placeholder="Va&scaron;e zku&scaron;enost s poji&scaron;ťovnou a jej&iacute;m plněn&iacute;m v př&iacute;padě pojistn&eacute; ud&aacute;losti." rows="10"></textarea>
+      </div>
+     </div>
+     <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+       <button class="btn btn-primary " name="submit" type="submit">
+        Přídat recenzi
+       </button>
+      </div>
+     </div>
+    </form>
+
+{% endblock %}

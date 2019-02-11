@@ -4,6 +4,8 @@
 {% load static %}
 
 {% block bootstrap4_extra_head %}
+<title>Srovnávač pojištění &#8212; {% block head_title %}{% endblock %}</title>
+
     <!-- Custom fonts for this template -->
     {# <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> #}
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -25,13 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Nejnovější recenze</a>
+                  <a class="nav-link" href="{% url 'index' %}">Nejnovější recenze</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Přidat recenzi</a>
+                  <a class="nav-link" href="{% url 'new_review' %}">Přidat recenzi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">O webu</a>
+                  <a class="nav-link" href="{% url 'about' %}">O webu</a>
           </li>
         </ul>
       </div>
