@@ -2,15 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
+from django.core.paginator import Paginator
 
 from .models import Review, Product
 
 
 
 def index(request):
-    latest_reviews = Review.objects.order_by('-creation_time')[:5]
+    latest_reviews = Review.objects.order_by('-creation_time')
+    paginator = Paginator(latest_reviews, 10)
+    page = request.GET.get('page')
     context = {
-            'reviews': latest_reviews,
+            'reviews': paginator.get_page(page),
     }
     return render(request, 'index.html', context)
 
