@@ -4,7 +4,7 @@
 {% load static %}
 
 {% block bootstrap4_extra_head %}
-    <title>Srovnávač pojištění &#8212; {% block head_title %}{% endblock %}</title>
+    <title>Srovnání pojištění &#8212; {% block head_title %}{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
 
     <!-- Custom fonts for this template -->
@@ -26,7 +26,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="{% url "index" %}">Srovnávač pojištění</a>
+      <a class="navbar-brand" href="{% url "index" %}">Srovnání pojištění</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -39,9 +39,11 @@
           <li class="nav-item">
                   <a class="nav-link" href="{% url 'new_review' %}">Přidat recenzi</a>
           </li>
+          {% comment %}
           <li class="nav-item">
                   <a class="nav-link" href="{% url 'about' %}">O webu</a>
-          </li>
+          </li> 
+          {% endcomment %}
         </ul>
       </div>
     </div>
@@ -80,31 +82,12 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
+              <a href="https://github.com/leftys/insurance-reviews">
+                <img src="{% static "img/github.svg" %}" width=32 alt="Github" title="Edit on Git:ab!"/>
               </a>
             </li>
           </ul>
-          {# <p class="copyright text-muted">Copyright &copy; Srovnávač pojištění 2019</p> #} 
+          {# <p class="copyright text-muted">Copyright &copy; Srovnání pojištění 2019</p> #} 
         </div>
       </div>
     </div>
