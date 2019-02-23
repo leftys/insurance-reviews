@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-                  <a class="nav-link" href="{% url 'index' %}">Nejnovější recenze</a>
+                  <a class="nav-link" href="{% url 'index' %}">Všechny recenze</a>
           </li>
           <li class="nav-item">
                   <a class="nav-link" href="{% url 'new_review' %}">Přidat recenzi</a>
@@ -57,7 +57,7 @@
         <div class="col-lg-10 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>{% block title %}(no title){% endblock %}</h1>
-            {# <span class="subheading">Blabla</span> #}
+            <span class="subheading">{% block subtitle %}{% endblock %}</span>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
           <ul class="list-inline text-center">
             <li class="list-inline-item">
               <a href="https://github.com/leftys/insurance-reviews">
-                <img src="{% static "img/github.svg" %}" width=32 alt="Github" title="Edit on Git:ab!"/>
+                <img src="{% static "img/github.svg" %}" width=32 alt="Github" title="Vylepšit web na Githubu!"/>
               </a>
             </li>
           </ul>

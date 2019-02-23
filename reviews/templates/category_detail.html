@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block head_title %}Nejnovější recenze{% endblock %}
-{% block title %}Recenze pojištění{% endblock %}
-{% block subtitle %}Jak se zachovají pojišťovny v případě pojistného plnění?{% endblock %} 
+{% block head_title %}{{ category }}{% endblock %}
+{% block title %}{{ category }}{% endblock %}
+{% block subtitle %}od různých pojišťoven{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,6 @@
             </h3>
         {#</a>#}
           <p class="post-meta">
-            Srovnat kategorii <a href="{% url 'category_detail' review.product.category.id %}">{{ review.product.category }}</a> 
             <input id="stars-{{ review.id }}" type="text" class="rating" max=5 value="{{ review.rating|floatformat:"0" }}" data-size="sm" readonly="true"></input>
           </p>
           <p class="">{{ review.text }} </p>
@@ -50,8 +49,5 @@
   </ul>
 </nav>
 {% endif %}
-
-<p>Pomozte ostatním s rozhodnutím a podělte se o svoji zkušenost s pojištěním:</p>
-<div><form class="text-center" action="{% url 'new_review' %}"><button class="btn">Přidat recenzi</button></form></div>
 
 {% endblock %}

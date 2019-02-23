@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.core.paginator import Paginator
 
-from .models import Review, Product
+from .models import Review, Product, Category
 
 
 
@@ -16,6 +16,18 @@ def index(request):
             'reviews': paginator.get_page(page),
     }
     return render(request, 'index.html', context)
+
+
+def category_detail(request, category_id):
+    category = Category.objects.get(id = category_id)
+    latest_reviews = Review.objects.filter(product__category = category).order_by('-creation_time')
+    paginator = Paginator(latest_reviews, 10)
+    page = request.GET.get('page')
+    context = {
+            'category': category,
+            'reviews': paginator.get_page(page),
+    }
+    return render(request, 'category_detail.html', context)
 
 
 def new_review(request):
