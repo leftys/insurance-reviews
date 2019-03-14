@@ -6,6 +6,10 @@
 
 {% block content %}
 
+{% if not reviews or reviews.number == 1 %}
+{% include 'intro.html' %}
+{% endif %}
+
 {% if reviews %}
     {% for review in reviews %}
         <div class="post-preview">
