@@ -38,6 +38,10 @@ def new_review(request):
     return render(request, 'new_review.html', context)
 
 
+def how_to(request):
+    return render(request, 'how_to.html')
+
+
 def about(request):
     return render(request, 'about.html')
 

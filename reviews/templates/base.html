@@ -50,6 +50,9 @@
           <li class="nav-item">
                   <a class="nav-link" href="{% url 'new_review' %}">Přidat recenzi</a>
           </li>
+          <li class="nav-item">
+                  <a class="nav-link" href="{% url 'how_to' %}">Řešení problémů</a>
+          </li> 
           {% comment %}
           <li class="nav-item">
                   <a class="nav-link" href="{% url 'about' %}">O webu</a>
@@ -65,7 +68,7 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 col-md-10 mx-auto">
+        <div class="col-lg-12 col-md-12 mx-auto">
           <div class="site-heading">
             <h1>{% block title %}(no title){% endblock %}</h1>
             <span class="subheading">{% block subtitle %}{% endblock %}</span>
