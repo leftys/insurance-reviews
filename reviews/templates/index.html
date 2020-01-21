@@ -19,11 +19,11 @@
             </h3>
         {#</a>#}
           <p class="post-meta">
-            Srovnat kategorii <a href="{% url 'category_detail' review.product.category.id %}">{{ review.product.category }}</a> 
+            Srovnání <a href="{% url 'category_detail' review.product.category.id %}">{{ review.product.category }}</a> 
             <input id="stars-{{ review.id }}" type="text" class="rating" max=5 value="{{ review.rating|floatformat:"0" }}" data-size="sm" readonly="true"></input>
           </p>
           <p class="">{{ review.text }} </p>
-          <p class="post-meta">Napsal {{ review.author }} dne {{ review.creation_time|date:'d.m.Y' }}</p>
+          <p class="post-meta">Napsal(a) {{ review.author }} dne {{ review.creation_time|date:'d.m.Y' }}</p>
         </div>
         <hr> 
     {% endfor %}
