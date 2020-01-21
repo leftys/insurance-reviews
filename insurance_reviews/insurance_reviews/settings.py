@@ -25,7 +25,7 @@ SECRET_KEY = 'i2c%hd26+d-tk%^n1u=an2cth3j-oh_5x6ku)5g3&oy3r1(tsn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['srovnani-pojisteni.janskoda.cz']
 
 
 # Application definition
@@ -120,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
